@@ -28,8 +28,8 @@ try {
       return;
   }
   const pull_request_number = context.payload.pull_request.number;
-
-  const octokit = new github.GitHub(github_token);
+ 
+  const octokit=new Octokit({auth:github_token})
   
   getGifs().then(()=>{
     const message= '![image]('+gifURL+') \n  Hello '+payload.sender.login+' , '+
