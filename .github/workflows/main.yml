@@ -8,14 +8,5 @@ jobs:
     - name: Hello world action step
       id: hello
       uses: HarishTeens/woofy@test
-     
-    - name: Checkout
-      uses: actions/checkout@v1
-
-    - name: Comment PR
-      uses: thollander/actions-comment-pull-request@master
       with:
-        message: '![image](${{ steps.hello.outputs.gif }})                                           Hello ${{ steps.hello.outputs.name }} , 
-        Thanks for your Commits, keep it rolling and be patient until a Reviewer merges it.  
-        Until then hope this doggy keeps you company 🚀  . '
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
