@@ -25,6 +25,7 @@ const makeComment=async (github_token,url,number,body)=>{
     issue_number: number,
     body: body
   })
+  console.log(new_comment);
 }
 
 try {
@@ -49,7 +50,6 @@ try {
     const message= '![image]('+gifURL+') \n  Hello '+senderLogin+' , '+
     'Thanks for your Commits, keep it rolling and be patient until a Reviewer merges it. '+ 
     'Until then hope this doggy keeps you company 🚀  . ';
-    console.log(github_token,url,pull_request_number,message);
     makeComment(github_token,url,pull_request_number,message);
   });
   
