@@ -7,6 +7,6 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: HarishTeens/woofy@master
+      uses: HarishTeens/woofy@test
       with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
