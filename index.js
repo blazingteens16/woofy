@@ -34,6 +34,7 @@ try {
 
   const context = github.context;
   const senderLogin=payload.sender.login;
+  const url=context.payload.pull_request.comments_url.substr(22);
   // const senderLogin="hari";
   if (context.payload.pull_request == null) {
       core.setFailed('No pull request found.');
@@ -45,11 +46,11 @@ try {
   
   
   getGifs().then(()=>{
-    console.log(payload);
+    console.log(github_token,url,pull_request_number,message);
     const message= '![image]('+gifURL+') \n  Hello '+senderLogin+' , '+
     'Thanks for your Commits, keep it rolling and be patient until a Reviewer merges it. '+ 
     'Until then hope this doggy keeps you company 🚀  . ';
-    makeComment(github_token,context.payload.pull_request.comments_url.substr(22),pull_request_number,message);
+    makeComment(github_token,url,pull_request_number,message);
   });
   
 } catch (error) {
